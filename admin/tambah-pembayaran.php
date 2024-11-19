@@ -10,7 +10,7 @@ $data = mysqli_fetch_array($query);
 <h5>Halaman Pembayaran SPP </h5>
 <a href="?url=pembayaran" class="btn btn-primary"> KEMBALI </a>
 <hr>
-<form method="post" action="?url=proses-tambah-pembayaran&nisn=<? $nisn; ?>">
+<form method="post" action="?url=proses-tambah-pembayaran&nisn=<?= $nisn; ?>">
 <input name="id_spp" value="<?= $data['id_spp']?>" type="hidden" class="form-control" required>
     <div class="form-group mb-2">
         <label>Nama Petugas</label>

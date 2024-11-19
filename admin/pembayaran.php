@@ -2,7 +2,7 @@
 
 <hr>
 <table class="table table-striped table-bordered">
-    <tr class="fr-bold">
+    <tr class="fw-bold">
         <td>No</td>
         <td>NISN</td>
         <td>Nama</td>
@@ -41,13 +41,13 @@
             if($kekurangan==0){
                 echo"<span class='badge text-bg-success'> Sudah Lunas </span>";
             }else{ ?>
-            <a href="?url=tambah-pembayaran&nisn=<? $data['nisn'] ?>&kekurangan=<? $kekurangan ?>" class="btn btn-danger"> Pilih & Bayar </a>
+            <a href="?url=tambah-pembayaran&nisn=<?= $data['nisn'] ?>&kekurangan=<?= $kekurangan ?>" class="btn btn-danger"> Pilih & Bayar </a>
             <?php 
             }
             ?>
         <td>
             <a href="?url=history-pembayaran&nisn=<?= $data['nisn'] ?>" 
-                class='btn btn-danger'>History</a>
+                class='btn btn-info'>History</a>
         </td>
     </tr>
         <?php  }

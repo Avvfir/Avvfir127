@@ -6,7 +6,7 @@ $nisn = $_GET['nisn'];
 
 <hr>
 <table class="table table-striped table-bordered">
-    <tr class="fr-bold">
+    <tr class="fw-bold">
         <td>No</td>
         <td>NISN</td>
         <td>Nama</td>

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2024 at 09:46 AM
+-- Generation Time: Nov 15, 2024 at 10:01 AM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.1.25
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -38,8 +38,11 @@ CREATE TABLE `kelas` (
 --
 
 INSERT INTO `kelas` (`id_kelas`, `nama_kelas`, `kompetensi_keahlian`) VALUES
-(2, 'X PPLG 1', 'pplg'),
-(11, 'XI TABUS 1', 'tatabusana');
+(11, 'X', 'PPLG'),
+(22, 'XI', 'PPLG'),
+(33, 'XII', 'PPLG'),
+(44, 'X', 'TABUS'),
+(55, 'XI', 'DKV');
 
 -- --------------------------------------------------------
 
@@ -52,7 +55,7 @@ CREATE TABLE `pembayaran` (
   `id_petugas` int(11) NOT NULL,
   `nisn` varchar(10) NOT NULL,
   `tgl_bayar` date NOT NULL,
-  `bulan_dibayar` varchar(8) NOT NULL,
+  `bulan_dibayar` text NOT NULL,
   `tahun_dibayar` varchar(4) NOT NULL,
   `id_spp` int(11) NOT NULL,
   `jumlah_bayar` int(11) NOT NULL
@@ -63,7 +66,11 @@ CREATE TABLE `pembayaran` (
 --
 
 INSERT INTO `pembayaran` (`id_pembayaran`, `id_petugas`, `nisn`, `tgl_bayar`, `bulan_dibayar`, `tahun_dibayar`, `id_spp`, `jumlah_bayar`) VALUES
-(1, 1, '26316', '2024-11-04', 'november', '2024', 1, 7000000);
+(11, 1, '11', '2024-11-03', 'september', '2024', 11, 95000),
+(22, 2, '22', '2021-11-02', 'agustus', '2023', 22, 50000),
+(33, 1, '33', '2024-11-01', 'mei', '2020', 33, 50000),
+(44, 1, '44', '2023-01-13', 'juni', '2023', 44, 75000),
+(55, 2, '55', '2023-01-13', 'juli', '2023', 55, 100000);
 
 -- --------------------------------------------------------
 
@@ -84,7 +91,8 @@ CREATE TABLE `petugas` (
 --
 
 INSERT INTO `petugas` (`id_petugas`, `username`, `password`, `nama_petugas`, `level`) VALUES
-(1, 'admin', '123', 'firna', 'admin');
+(1, 'admin', '123', 'administrator', 'admin'),
+(2, 'petugas', '321', 'petugas', 'petugas');
 
 -- --------------------------------------------------------
 
@@ -107,9 +115,11 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`nisn`, `nis`, `nama`, `id_kelas`, `alamat`, `no_telp`, `id_spp`) VALUES
-(22, '22', 'apit', 2, 'jl.kahyangan', '08937636', 2),
-(111, '111', 'king', 11, 'desa fantasy', '089765467', 1),
-(2147483647, '23980495', 'zaa', 1, 'jl. kahyangan', '54654768', 95000);
+(11, '11', 'renza', 11, 'jl. fantasy', '089764679', 11),
+(22, '22', 'firnanami', 22, 'jl. nineteen', '08975645', 22),
+(33, '33', 'lee do hyun', 33, 'jl. seoul', '0877666677', 33),
+(44, '44', 'song kang', 44, 'jl. konoha', '0899999999', 44),
+(55, '55', 'lee ji won', 55, 'jl. queen ', '08797656778', 55);
 
 -- --------------------------------------------------------
 
@@ -128,20 +138,11 @@ CREATE TABLE `spp` (
 --
 
 INSERT INTO `spp` (`id_spp`, `tahun`, `nominal`) VALUES
-(1, 2024, 400000),
-(2, 2025, 500000);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
-
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+(11, 2023, 125000),
+(22, 2024, 95000),
+(33, 2023, 50000),
+(44, 2020, 75000),
+(55, 2025, 100000);
 
 --
 -- Indexes for dumped tables
@@ -179,12 +180,6 @@ ALTER TABLE `spp`
   ADD PRIMARY KEY (`id_spp`);
 
 --
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -192,31 +187,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `petugas`
 --
 ALTER TABLE `petugas`
-  MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `spp`
 --
 ALTER TABLE `spp`
-  MODIFY `id_spp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_spp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

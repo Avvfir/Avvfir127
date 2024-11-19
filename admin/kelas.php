@@ -2,7 +2,7 @@
 <a href="?url=tambah-kelas" class="btn btn-primary"> Tambah Kelas </a>
 <hr>
 <table class="table table-striped table-bordered">
-    <tr class="fr-bold">
+    <tr class="fw-bold">
         <td>No</td>
         <td>Nama Kelas</td>
         <td>Kompetensi Keahlian</td>

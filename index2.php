@@ -13,7 +13,7 @@
             <h4 class="text-center">LOGIN ADMIN / PETUGAS</h4>
                 <div class="card">
                     <div class="card-header">
-                         <img src="img/download.png" width="150px">
+                    <img src="img/download.png" width="150px">
                     </div>
                     <div class="card-body">
                         <form action="proses-login-petugas.php" method="post">

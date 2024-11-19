@@ -2,7 +2,7 @@
 <a href="?url=tambah-petugas" class="btn btn-primary"> Tambah Petugas </a>
 <hr>
 <table class="table table-striped table-bordered">
-    <tr class="fr-bold">
+    <tr class="fw-bold">
         <td>No</td>
         <td>Username</td>
         <td>Password</td>

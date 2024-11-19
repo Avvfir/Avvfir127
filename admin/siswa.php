@@ -2,7 +2,7 @@
 <a href="?url=tambah-siswa" class="btn btn-primary"> Tambah Siswa </a>
 <hr>
 <table class="table table-striped table-bordered">
-    <tr class="fr-bold">
+    <tr class="fw-bold">
         <td>No</td>
         <td>NISN</td>
         <td>NIS</td>

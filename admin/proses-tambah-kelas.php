@@ -12,5 +12,5 @@ if($query){
     echo"<script>alert('Maaf Data tidak tersimpan'); window.locatin.assign('?url=kelas');
     </script>";
 }
-hououoiuiui
+
 ?>
